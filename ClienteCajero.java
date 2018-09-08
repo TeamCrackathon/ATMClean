@@ -5,26 +5,26 @@ import java.io.OutputStream;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Cliente {
+public class ClienteCajero {
 
   private String numeroTelefono;
   private String nip;
   private String hostname;
   private int port;
 
-  public Cliente() {
+  public ClienteCajero() {
     this.numeroTelefono = null;
     this.nip = null;
     this.hostname = null;
     this.port = -1;
   }
 
-  public Cliente(String hostname, int port) {
+  public ClienteCajero(String hostname, int port) {
     this.hostname = hostname;
     this.port = port;
   }
 
-  public Cliente(String numeroTelefono, String nip, String hostname, int port) {
+  public ClienteCajero(String numeroTelefono, String nip, String hostname, int port) {
     this.numeroTelefono = numeroTelefono;
     if(nip.length()!=4)
       throw new IllegalArgumentException("El nip debe ser de 4 digitos");
@@ -96,7 +96,7 @@ public class Cliente {
         if(args.length!=2)
           throw new IllegalArgumentException("No especificaste el host o el puerto");
 
-        Cajero cajero = new Cajero(args[0],Integer.parseInt(args[1]));
+        ClienteCajero cajero = new ClienteCajero(args[0],Integer.parseInt(args[1]));
         Scanner in = new Scanner(System.in);
 
         System.out.print("Ingrese su numero telefonico: ");
