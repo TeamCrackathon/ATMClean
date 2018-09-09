@@ -1,19 +1,11 @@
 <?php
-ob_start();
-?>
-<?php
-$content
+require_once 'lib/dompdf/dompdf_config.inc.php';
 
-  $content = (modeloCorreo.html)
-  require_once(dirname(__FILE__).'/../vendor/autoload.php');
-  try
-  {
-      $html2pdf = new HTML2PDF('P', 'A4', 'es', true, 'UTF-8', 3);
-      $html2pdf->pdf->SetDisplayMode('fullpage');
-      $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
-      $html2pdf->Output('plantillas.pdf');
-  }
-  catch(HTML2PDF_exception $e) {
-      echo $e;
-      exit;
-  }
+$dompdf = new DOMPDF();
+$dompdf->load_html( file_get_contents( 'file:///home/nicoracal/Escritorio/reto/ATMClean/modeloCorreo.html' ) );
+$dompdf->render();
+$dompdf->stream("comprobante.pdf");
+
+<a href="output.php?t=pdf" target="_blank">Pdf</a>
+
+?>
