@@ -1,0 +1,83 @@
+*{
+  margin:50;
+  padding: 50;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+}
+.grid-item{
+  border: 1px;
+}
+
+.item1{
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+
+.centra{
+  position: relative;
+  margin-top: 57px;
+}
+
+header{
+
+  text-align: left;
+}
+h1{
+  color: #a8e0ff;
+}
+
+h2{
+  color: #a8e0ff;
+}
+
+.notificacion{
+  font-family: 'Rokkitt', serif;
+  font-size: 12px;
+
+}
+
+#promocional{
+  text-align: center;
+  font-family: 'Palanquin', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #3393cd
+}
+
+#condiciones{
+  text-align: justify;
+  font-family: 'Palanquin', sans-serif;
+  font-size: 10px;
+}
+
+#name{
+  text-align: right;
+  font-family: 'Palanquin', sans-serif;
+  font-weight: bold;
+
+}
+
+#comprobante{
+  text-align: inherit;
+  font-size: 12px;
+}
+
+#ca{
+  font-size: 10px;
+}
+
+#datos{
+  text-align: center;
+}
+#recuadro{
+  font-size: 12px;
+  text-align: justify;
+  font-family: 'Palanquin', sans-serif;
+  padding:0px;
+}
+#correo{
+  font-size: 10px;
+}
