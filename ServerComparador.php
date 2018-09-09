@@ -47,6 +47,15 @@
             // Enviar el correo
             $mail->Send();
             echo "Correo enviado";
+            $num = var_dump($num);
+            $pass = var_dump($pass);
+            $consulta2 = "DELETE FROM NoUser WHERE Telefono='$num' and NIP='$pass'";
+            mysqli_query($conn, $consulta2);
+            if(mysqli_query($conn, $consulta2)){
+                echo "Borrado satisfactoriamente";
+            }else{
+                echo "No se pudo borrar";
+            }
             header("Location: InterfazWeb.php");
             break;
         }
