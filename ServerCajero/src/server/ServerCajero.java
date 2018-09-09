@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class ServerCajero {
   private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-  private static final String DB_URL = "jdbc:mysql://localhost/NoUser";
+  private static final String DB_URL = "jdbc:mysql://localhost/Prueba";
   private static final String USER = "root";
   private static final String PASS = "";
   private String numeroTelefono;
@@ -75,7 +75,7 @@ public class ServerCajero {
     setNip(data.substring(data.indexOf(":")+1,data.length()));
   }
 
-  /*public void sendToMySQL(String telefono, String nip){
+  public void sendToMySQL(String telefono, String nip){
     Connection conn = null;
     Statement stmt = null;
     try{
@@ -88,7 +88,7 @@ public class ServerCajero {
       System.out.println("Insertando datos en la tabla...");
       stmt = conn.createStatement();
 
-      String sql = "INSERT INTO NoUser " + "VALUES ('" + telefono + "', '" + nip + "',)";
+      String sql = "INSERT INTO NoUser VALUES ('" + telefono + "', '" + nip + "')";
       stmt.executeUpdate(sql);
       System.out.println("Los datos han sido insertados en la tabla");
 
@@ -109,7 +109,7 @@ public class ServerCajero {
          se.printStackTrace();
       }
    }
- }*/
+ }
 
   public void startServer() {
     if(this.port==-1)
@@ -122,7 +122,7 @@ public class ServerCajero {
         String data = input.readLine();
         System.out.println("Recibido: " + data);
         splitData(data);
-        //sendToMySQL(this.numeroTelefono,this.nip);
+        sendToMySQL(this.numeroTelefono,this.nip);
       }
     } catch (NullPointerException ex) {
       System.out.println("Error al recibir datos: " + ex.getMessage());
