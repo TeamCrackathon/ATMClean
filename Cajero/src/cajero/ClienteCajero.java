@@ -1,3 +1,5 @@
+package cajero;
+
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.io.PrintWriter;
@@ -93,17 +95,18 @@ public class ClienteCajero {
   }
 
     public static void main(String[] args) {
-        if(args.length!=2)
-          throw new IllegalArgumentException("No especificaste el host o el puerto");
+      Scanner in = new Scanner(System.in);
+      System.out.println("Ingrese el host:");
+      String host = in.nextLine();
+      System.out.println("Ingrese el puerto:");
+      int port = Integer.parseInt(in.nextLine());
+      ClienteCajero cajero = new ClienteCajero(host,port);
 
-        ClienteCajero cajero = new ClienteCajero(args[0],Integer.parseInt(args[1]));
-        Scanner in = new Scanner(System.in);
+      System.out.println("Ingrese su numero telefonico:");
+      cajero.setNumeroTelefono(in.nextLine());
+      System.out.println("Ingrese un nip único de cuatro digitos:");
+      cajero.setNip(in.nextLine());
 
-        System.out.print("Ingrese su numero telefonico: ");
-        cajero.setNumeroTelefono(in.nextLine());
-        System.out.print("\nIngrese un nip único de cuatro digitos: ");
-        cajero.setNip(in.nextLine());
-
-        cajero.sendData();
+      cajero.sendData();
     }
 }
