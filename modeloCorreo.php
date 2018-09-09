@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-  <html>
-    <head>
-      <title> BBVA Bancomer </title>
+<?php
+ob_start();
+?>
+<?php
+$content
 
-
-<meta charset = "utf-8" />
-<meta http-equiv = "Content-type" content="text/html; charset=utf-8" />
-<meta name = "viewport" content = "width=device-width, initial-scale=1" />
-</head>
-
-<body>
-
-</body>
-</html>
+  $content = (modeloCorreo.html)
+  require_once(dirname(__FILE__).'/../vendor/autoload.php');
+  try
+  {
+      $html2pdf = new HTML2PDF('P', 'A4', 'es', true, 'UTF-8', 3);
+      $html2pdf->pdf->SetDisplayMode('fullpage');
+      $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
+      $html2pdf->Output('plantillas.pdf');
+  }
+  catch(HTML2PDF_exception $e) {
+      echo $e;
+      exit;
+  }
