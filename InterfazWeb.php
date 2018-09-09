@@ -10,21 +10,21 @@
 </head>
 <body>
     <div class="container">
-        <form action="serverComparador.php" method="post">
+        <form action="ServerComparador.php" method="POST">
             <div class="form-group">
                 <label for="numero">Número: </label>
-                <input type="text" name="" id="numero" class="form-control">
+                <input type="text" name="num" id="numero" class="form-control">
             </div>
             <div class="form-group">
                 <label for="email">Correo: </label>
-                <input type="email" name="" id="email" class="form-control">
+                <input type="email" name="correo" id="email" class="form-control">
             </div>
             <div class="form-group">
-                <label for="pass">Contraseña: </label>
-                <input type="password" name="" id="pass" class="form-control">
+                <label for="pass">NIP Generado en Cajero: </label>
+                <input type="password" name="contra" id="pass" class="form-control">
             </div>
             <div class="form-group">
-                <input type="button" value="Enviar" class="form-control btn btn-primary">
+                <button type="submit" class="form-control btn btn-primary">Enviar</button>
             </div>
         </form>
     </div>
